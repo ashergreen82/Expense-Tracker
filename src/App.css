@@ -11,3 +11,8 @@ body {
 .input {
   display: flexbox;
 }
+
+.AddExpense {
+  background-color: #56c7ff;
+  color: white;
+}

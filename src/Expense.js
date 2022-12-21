@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-export default function Test() {
+export default function Expense() {
     const [name, setName] = useState("");
     const [startDate, setStartDate] = useState(new Date());
 
@@ -32,7 +32,7 @@ export default function Test() {
                 <form>
                     <label>Amount:
                         <input
-                            type="text"
+                            type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="How much?"
@@ -57,6 +57,10 @@ export default function Test() {
                     </label>
                 </form>
             </form>
+            <button className="AddExpense" onClick={addExpense}>Add Expense</button>
         </div>
     );
+}
+function addExpense() {
+    alert("Expense will someday be added, but not today, because I don't feel like adding it right now.")
 }
