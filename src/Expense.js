@@ -57,7 +57,7 @@ export default function Expense() {
                     </label>
                 </form>
             </form>
-            <button className="AddExpense" onClick={addExpense}>Add Expense</button>
+            <button className="AddExpense" onClick={addExpense}>Add The New Expense</button>
         </div>
     );
 }
