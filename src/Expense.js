@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import './App.css';
+import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
     const [name, setName] = useState("");
@@ -11,7 +13,7 @@ export default function Expense() {
 
     const [amount, setAmount] = useState('');
     const amountInputRef = useRef(null);
-
+    const [expenses, setExpenses] = useState([{ type: "visa", name: "Asher", date: "June 1", amount: "$200" }]);
     const handleChange = (e) => {
         setDate(e.target.value);
     };
@@ -58,9 +60,12 @@ export default function Expense() {
                 </form>
             </form>
             <button className="AddExpense" onClick={addExpense}>Add The New Expense</button>
+            <ExpenseTable expenses={expenses} />
         </div>
     );
 }
 function addExpense() {
     alert("Expense will someday be added, but not today, because I don't feel like adding it right now.")
 }
+
+
