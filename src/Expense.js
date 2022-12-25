@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React from 'react'
 import { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
@@ -13,10 +14,31 @@ export default function Expense() {
 
     const [amount, setAmount] = useState('');
     const amountInputRef = useRef(null);
-    const [expenses, setExpenses] = useState([{ type: "visa", name: "Asher", date: "June 1", amount: "$200" }]);
+
+    const [type, setType] = useState('');
+    const typeInputRef = useRef(null);
+
+    const [expenses, setExpenses] = useState([]);
+    // const [expenses, setExpenses] = useState([{ type: "visa", name: name, date: date, amount: amount }]);
     const handleChange = (e) => {
         setDate(e.target.value);
     };
+
+    function addExpense() {
+        // console.log(expenses)
+        console.log("AddExpense function has executed")
+        const expenseObject = { type: type, name: name, date: date, amount: amount }
+        console.log(expenseObject)
+        // Add the newly created expense object to expenses
+        const expensesCopy = []
+        for (let i = 0; i < expenses.length; i++) {
+            const expense = expenses[i];
+            expensesCopy.push(expense);
+        }
+        expensesCopy.push(expenseObject)
+        setExpenses(expensesCopy)
+    }
+
     return (
         <div>
             <h1>SIMPLE EXPENSE TRACKER</h1>
@@ -26,7 +48,7 @@ export default function Expense() {
                 <label>Name:
                     <input
                         type="text"
-                        value={name}
+                        value={expenses.name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="What did you spend it on?"
                     />
@@ -35,7 +57,7 @@ export default function Expense() {
                     <label>Amount:
                         <input
                             type="number"
-                            value={amount}
+                            value={expenses.amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="How much?"
                         />
@@ -43,12 +65,12 @@ export default function Expense() {
                     <label>Date:
                         <input
                             type="date"
-                            value={date}
+                            value={expenses.date}
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </label>
                     <label>Type:
-                        <select name="type" id="type" onChange={(e) => setDate(e.target.value)}>
+                        <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
 
                             <option value="card">Card</option>
                             <option value="cash">Cash</option>
@@ -63,9 +85,6 @@ export default function Expense() {
             <ExpenseTable expenses={expenses} />
         </div>
     );
-}
-function addExpense() {
-    alert("Expense will someday be added, but not today, because I don't feel like adding it right now.")
-}
 
+}
 
