@@ -9,10 +9,19 @@ body {
 }
 
 .input {
-  display: flexbox;
+  /* display: flexbox; */
 }
 
 .AddExpense {
   background-color: #56c7ff;
   color: white;
+}
+
+form {
+  display: flexbox;
+  padding: 20px;
+}
+
+button {
+  margin-bottom: 20px;
 }

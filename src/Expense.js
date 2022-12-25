@@ -15,7 +15,7 @@ export default function Expense() {
     let [amount, setAmount] = useState('');
     const amountInputRef = useRef(null);
 
-    let [type, setType] = useState('');
+    let [type, setType] = useState('Card');
     const typeInputRef = useRef(null);
 
     let [expenses, setExpenses] = useState([]);
@@ -36,7 +36,7 @@ export default function Expense() {
         }
         expensesCopy.push(expenseObject)
         setExpenses(expensesCopy)
-        resetInputFields();
+        // resetInputFields();
     }
 
     function resetInputFields() {
@@ -79,10 +79,10 @@ export default function Expense() {
                     <label>Type:
                         <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
 
-                            <option value="card">Card</option>
-                            <option value="cash">Cash</option>
-                            <option value="cryptocoin">Cryptocoin</option>
-                            <option value="other">Other</option>
+                            <option value="Card">Card</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Cryptocoin">Cryptocoin</option>
+                            <option value="Other">Other</option>
 
                         </select>
                     </label>
