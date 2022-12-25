@@ -6,20 +6,19 @@ import './App.css';
 import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
-    const [name, setName] = useState("");
+    let [name, setName] = useState("");
     const [startDate, setStartDate] = useState(new Date());
 
-    const [date, setDate] = useState('');
+    let [date, setDate] = useState('');
     const dateInputRef = useRef(null);
 
-    const [amount, setAmount] = useState('');
+    let [amount, setAmount] = useState('');
     const amountInputRef = useRef(null);
 
-    const [type, setType] = useState('');
+    let [type, setType] = useState('');
     const typeInputRef = useRef(null);
 
-    const [expenses, setExpenses] = useState([]);
-    // const [expenses, setExpenses] = useState([{ type: "visa", name: name, date: date, amount: amount }]);
+    let [expenses, setExpenses] = useState([]);
     const handleChange = (e) => {
         setDate(e.target.value);
     };
@@ -37,6 +36,14 @@ export default function Expense() {
         }
         expensesCopy.push(expenseObject)
         setExpenses(expensesCopy)
+        resetInputFields();
+    }
+
+    function resetInputFields() {
+        setName("")
+        setDate("")
+        setAmount("")
+        setType("")
     }
 
     return (
