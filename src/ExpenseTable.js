@@ -1,4 +1,8 @@
 function ExpenseTable(props) {
+    function DeleteItem() {
+        alert("Haha!  I am not going to delete that!!!  You still need it")
+        console.log("ExpenseTable function executed")
+    }
     console.log(props.expenses)
     const propsLength = props.expenses.length
     if (propsLength < 1) {
@@ -30,13 +34,16 @@ function ExpenseTable(props) {
                     </tr>
                     {props.expenses.map((props, key) => {
                         return (
-                            <tr key={key}>
-                                <td>{props.type}</td>
-                                <td>{props.name}</td>
-                                <td>{props.date}</td>
-                                <td>{props.amount}</td>
-                                <td>{props.description}</td>
-                            </tr>
+                            <>
+                                <tr key={key}>
+                                    <button id="deleteButton" img src="D:\Asher's Documents\Computer Programming\SDMM\Assignments\expense-tracker\images\green trashcan icon.png" onClick={DeleteItem}></button>
+                                    <td>{props.type}</td>
+                                    <td>{props.name}</td>
+                                    <td>{props.date}</td>
+                                    <td>{props.amount}</td>
+                                    <td>{props.description}</td>
+                                </tr>
+                            </>
                         )
                     })}
                 </table>
