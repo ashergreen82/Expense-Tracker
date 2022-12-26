@@ -12,7 +12,7 @@ function ExpenseTable(props) {
                         <th>Date</th>
                         <th>Amount</th>
                     </tr>
-                    Items will go here.
+                    <p id="intro_text">Your added items will show up here</p>
                 </table>
             </div>
         );

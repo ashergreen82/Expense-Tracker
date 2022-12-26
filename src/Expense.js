@@ -52,6 +52,16 @@ export default function Expense() {
             <h2>Add new item:</h2>
             {/* <input type="date" onChange={handleChange} ref={dateInputRef} /> */}
             <form>
+                <label>Type:
+                    <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
+
+                        <option value="Card">Card</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Cryptocoin">Cryptocoin</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                </label>
                 <label>Name:
                     <input
                         type="text"
@@ -61,14 +71,6 @@ export default function Expense() {
                     />
                 </label>
                 <form>
-                    <label>Amount:
-                        <input
-                            type="number"
-                            value={expenses.amount}
-                            onChange={(e) => setAmount(e.target.value)}
-                            placeholder="How much?"
-                        />
-                    </label>
                     <label>Date:
                         <input
                             type="date"
@@ -76,15 +78,13 @@ export default function Expense() {
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </label>
-                    <label>Type:
-                        <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
-
-                            <option value="Card">Card</option>
-                            <option value="Cash">Cash</option>
-                            <option value="Cryptocoin">Cryptocoin</option>
-                            <option value="Other">Other</option>
-
-                        </select>
+                    <label>Amount:
+                        <input
+                            type="number"
+                            value={expenses.amount}
+                            onChange={(e) => setAmount(e.target.value)}
+                            placeholder="How much?"
+                        />
                     </label>
                 </form>
             </form>
