@@ -25,6 +25,8 @@ export default function Expense() {
         setDate(e.target.value);
     };
 
+    let deleteButtonID = 0
+
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
@@ -37,7 +39,8 @@ export default function Expense() {
             expensesCopy.push(expense);
         }
         expensesCopy.push(expenseObject)
-        setExpenses(expensesCopy)
+        deleteButtonID += 1
+        setExpenses(expensesCopy, deleteButtonID)
         // resetInputFields();
     }
 

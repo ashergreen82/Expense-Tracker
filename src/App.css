@@ -101,7 +101,7 @@ td {
   padding-right: 50px;
 }
 
-#deleteButton {
+.deleteButton {
   /* background-color: DodgerBlue; */
   border: none;
   color: whitesmoke;

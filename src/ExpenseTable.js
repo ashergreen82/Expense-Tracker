@@ -1,7 +1,7 @@
-function ExpenseTable(props) {
+function ExpenseTable(props, deleteButtonID) {
     function DeleteItem() {
-        alert("Haha!  I am not going to delete that!!!  You still need it")
         console.log("ExpenseTable function executed")
+        console.log("deletebutton Identification: ", deleteButtonID)
     }
     console.log(props.expenses)
     const propsLength = props.expenses.length
@@ -22,6 +22,10 @@ function ExpenseTable(props) {
             </div>
         );
     } else {
+        // for (let i = 0; i < expenses.length; i++) {
+        //     const buttonId = expenses[i];
+        //     expensesCopy.push(expense);
+        // }
         return (
             <div className="ExpenseTable">
                 <table>
@@ -36,7 +40,7 @@ function ExpenseTable(props) {
                         return (
                             <>
                                 <tr key={key}>
-                                    <button id="deleteButton" img src="D:\Asher's Documents\Computer Programming\SDMM\Assignments\expense-tracker\images\green trashcan icon.png" onClick={DeleteItem}></button>
+                                    <button id={deleteButtonID} className="deleteButton" img src="./images/green trashcan icon.png" onClick={DeleteItem}></button>
                                     <td>{props.type}</td>
                                     <td>{props.name}</td>
                                     <td>{props.date}</td>
