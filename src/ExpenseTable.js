@@ -13,7 +13,7 @@ function ExpenseTable({ expenses, setExpenses }) {
     };
     const allExpenses = expenses.map((expense, key) => {
         return (
-            <tr>
+            <tr key={key} id={expense.id}>
                 <td>{expense.name}</td>
                 <td>{expense.date}</td>
                 <td>{expense.amount}</td>
