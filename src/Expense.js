@@ -7,16 +7,18 @@ import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
     let [name, setName] = useState("");
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
 
     let [date, setDate] = useState('');
-    const dateInputRef = useRef(null);
+    // const dateInputRef = useRef(null);
 
     let [amount, setAmount] = useState('');
-    const amountInputRef = useRef(null);
+    // const amountInputRef = useRef(null);
 
     let [type, setType] = useState('Card');
-    const typeInputRef = useRef(null);
+    // const typeInputRef = useRef(null);
+
+    let [description, setDescription] = useState("");
 
     let [expenses, setExpenses] = useState([]);
     const handleChange = (e) => {
@@ -26,7 +28,7 @@ export default function Expense() {
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
-        const expenseObject = { type: type, name: name, date: date, amount: amount }
+        const expenseObject = { type: type, name: name, date: date, amount: amount, description: description }
         console.log(expenseObject)
         // Add the newly created expense object to expenses
         const expensesCopy = []
@@ -62,12 +64,12 @@ export default function Expense() {
 
                     </select>
                 </label>
-                <label>Name:
+                <label>Location:
                     <input
                         type="text"
                         value={expenses.name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="What did you spend it on?"
+                        placeholder="Where was it purchased?"
                     />
                 </label>
                 <form>
@@ -84,6 +86,14 @@ export default function Expense() {
                             value={expenses.amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="How much?"
+                        />
+                    </label>
+                    <label>Description:
+                        <input
+                            type="text"
+                            value={expenses.description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            placeholder="What did you spend it on?"
                         />
                     </label>
                 </form>

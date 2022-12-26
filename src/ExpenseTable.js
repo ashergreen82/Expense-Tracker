@@ -11,6 +11,7 @@ function ExpenseTable(props) {
                         <th>Name</th>
                         <th>Date</th>
                         <th>Amount</th>
+                        <th>Description</th>
                     </tr>
                     <p id="intro_text">Your added items will show up here</p>
                 </table>
@@ -25,6 +26,7 @@ function ExpenseTable(props) {
                         <th>Name</th>
                         <th>Date</th>
                         <th>Amount</th>
+                        <th>Description</th>
                     </tr>
                     {props.expenses.map((props, key) => {
                         return (
@@ -33,6 +35,7 @@ function ExpenseTable(props) {
                                 <td>{props.name}</td>
                                 <td>{props.date}</td>
                                 <td>{props.amount}</td>
+                                <td>{props.description}</td>
                             </tr>
                         )
                     })}
