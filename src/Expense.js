@@ -15,7 +15,7 @@ export default function Expense() {
     let [amount, setAmount] = useState('');
     // const amountInputRef = useRef(null);
 
-    let [type, setType] = useState('Card');
+    // let [type, setType] = useState('Card');
     // const typeInputRef = useRef(null);
 
     let [description, setDescription] = useState("");
@@ -25,12 +25,10 @@ export default function Expense() {
         setDate(e.target.value);
     };
 
-    let deleteButtonID = 0
-
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
-        const expenseObject = { type: type, name: name, date: date, amount: amount, description: description }
+        const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random() }
         console.log(expenseObject)
         // Add the newly created expense object to expenses
         const expensesCopy = []
@@ -39,8 +37,7 @@ export default function Expense() {
             expensesCopy.push(expense);
         }
         expensesCopy.push(expenseObject)
-        deleteButtonID += 1
-        setExpenses(expensesCopy, deleteButtonID)
+        setExpenses(expensesCopy)
         // resetInputFields();
     }
 
@@ -48,7 +45,6 @@ export default function Expense() {
         setName("")
         setDate("")
         setAmount("")
-        setType("")
     }
 
     return (
@@ -57,7 +53,7 @@ export default function Expense() {
             <h2>Add new item:</h2>
             {/* <input type="date" onChange={handleChange} ref={dateInputRef} /> */}
             <form>
-                <label>Type:
+                {/* <label>Type:
                     <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
 
                         <option value="Card">Card</option>
@@ -66,7 +62,7 @@ export default function Expense() {
                         <option value="Other">Other</option>
 
                     </select>
-                </label>
+                </label> */}
                 <label>Location:
                     <input
                         type="text"
@@ -102,7 +98,7 @@ export default function Expense() {
                 </form>
             </form>
             <button className="AddExpense" onClick={addExpense}>Add The New Expense</button>
-            <ExpenseTable expenses={expenses} />
+            <ExpenseTable expenses={expenses} setExpenses={setExpenses} />
         </div>
     );
 
