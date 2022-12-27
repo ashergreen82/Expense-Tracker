@@ -6,9 +6,13 @@ function ExpenseTable({ expenses, setExpenses }) {
         console.log("deleteItem has been executed")
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement;
+        console.log("The complete e: ", e);
+        console.log("rowtodelete: ", rowToDelete);
+        console.log("rowtodelete.id: ", rowToDelete.id);
         const newExpenses = expenses.filter((expense) => parseFloat(expense.id) !== parseFloat(rowToDelete.id));
         setExpenses(newExpenses);
     };
+    console.log("expensel.id: ", expenses.id);
     const allExpenses = expenses.map((expense, key) => {
         return (
             <tr key={key} id={expense.id}>
