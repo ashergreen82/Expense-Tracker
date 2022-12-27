@@ -3,7 +3,8 @@ import trashCan from "./images/green trashcan icon.png";
 
 function ExpenseTable({ expenses, setExpenses }) {
     const deleteItem = (e) => {
-        console.log("deleteItem has been executed")
+        console.log("deleteItem has been executed");
+        console.log("All Expenses:", allExpenses);
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement;
         console.log("The complete e: ", e);
@@ -12,7 +13,7 @@ function ExpenseTable({ expenses, setExpenses }) {
         const newExpenses = expenses.filter((expense) => parseFloat(expense.id) !== parseFloat(rowToDelete.id));
         setExpenses(newExpenses);
     };
-    console.log("expensel.id: ", expenses.id);
+    console.log("expenses.id: ", expenses.id);
     const allExpenses = expenses.map((expense, key) => {
         return (
             <tr key={key} id={expense.id}>
