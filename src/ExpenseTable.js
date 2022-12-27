@@ -1,14 +1,12 @@
+import './ExpenseTable.css';
+import trashCan from "./images/green trashcan icon.png";
+
 function ExpenseTable({ expenses, setExpenses }) {
     const deleteItem = (e) => {
         console.log("deleteItem has been executed")
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement;
         const newExpenses = expenses.filter((expense) => parseFloat(expense.id) !== parseFloat(rowToDelete.id));
-        console.log("rowToDelete id is: ", rowToDelete.id)
-        console.log("Rowtodelete: ", rowToDelete)
-        console.log("e target value is: ", e.target.parentElement)
-        console.log("e targue vull value is: ", e.target)
-        console.log("e is: ", e)
         setExpenses(newExpenses);
     };
     const allExpenses = expenses.map((expense, key) => {
@@ -18,7 +16,7 @@ function ExpenseTable({ expenses, setExpenses }) {
                 <td>{expense.date}</td>
                 <td>{expense.amount}</td>
                 <td>{expense.description}</td>
-                <td><button className="deleteButton" img src="./images/green trashcan icon.png" onClick={deleteItem}>X</button></td>
+                <td><button className="deleteButton" onClick={deleteItem}><img className="trash-can" src={trashCan}></img></button></td>
             </tr>
         );
     });

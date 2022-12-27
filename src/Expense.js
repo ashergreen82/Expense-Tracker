@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react'
 import { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import './App.css';
+import './Expense.css';
 import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
@@ -19,6 +19,8 @@ export default function Expense() {
     // const typeInputRef = useRef(null);
 
     let [description, setDescription] = useState("");
+
+    let totalAmount = 0;
 
     let [expenses, setExpenses] = useState([]);
     const handleChange = (e) => {
@@ -37,14 +39,18 @@ export default function Expense() {
             expensesCopy.push(expense);
         }
         expensesCopy.push(expenseObject)
-        setExpenses(expensesCopy)
-        // resetInputFields();
+        totalAmount += Number(amount);
+        console.log("Amount = ", amount);
+        console.log("Total= ", totalAmount);
+        setExpenses(expensesCopy);
+        resetInputFields();
     }
 
     function resetInputFields() {
-        setName("")
-        setDate("")
-        setAmount("")
+        setName("");
+        setDate("");
+        setAmount("");
+        setDescription("");
     }
 
     return (
@@ -66,7 +72,7 @@ export default function Expense() {
                 <label>Location:
                     <input
                         type="text"
-                        value={expenses.name}
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Where was it purchased?"
                     />
@@ -75,14 +81,14 @@ export default function Expense() {
                     <label>Date:
                         <input
                             type="date"
-                            value={expenses.date}
+                            value={date}
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </label>
                     <label>Amount:
                         <input
                             type="number"
-                            value={expenses.amount}
+                            value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="How much?"
                         />
@@ -90,7 +96,7 @@ export default function Expense() {
                     <label>Description:
                         <input
                             type="text"
-                            value={expenses.description}
+                            value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="What did you spend it on?"
                         />
@@ -101,6 +107,5 @@ export default function Expense() {
             <ExpenseTable expenses={expenses} setExpenses={setExpenses} />
         </div>
     );
-
 }
 

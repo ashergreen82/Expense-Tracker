@@ -1,0 +1,118 @@
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.App {
+    text-align: center;
+    background-color: #a0d468;
+}
+
+body {
+    background-color: #a0d468;
+    color: #f5f7fa;
+}
+
+input {
+    padding-left: 15px;
+    /* margin-right: 30px; */
+    margin-left: 30px;
+    font-size: 30px;
+    height: 65px;
+    width: 311;
+    margin: 15px;
+}
+
+#type {
+    margin-left: 30px;
+    padding-left: 15px;
+    font-size: 30px;
+    height: 65px;
+    width: 311;
+    margin: 15px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+label {
+    /* padding-left: 15px; */
+    font-size: 35px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.AddExpense {
+    background-color: #56c7ff;
+    color: white;
+}
+
+form {
+    /* display: grid; */
+    /* grid-template-columns: repeat(400px); */
+    /* grid-template-rows: repeat(100px); */
+    padding: 20px;
+    /* height: 50px; */
+}
+
+button {
+    margin-top: 82;
+    margin-bottom: 40px;
+    height: 107px;
+    width: 300px;
+    font-size: 25px;
+}
+
+.ExpenseTable {
+    display: Grid;
+    grid-template-columns: repeat(200px);
+    padding-right: 15px;
+    margin-top: 40px;
+    font-size: 35px;
+    background-color: #ffffff;
+    color: black;
+    justify-content: center;
+    width: 90%;
+    justify-items: center;
+    margin: auto;
+}
+
+th {
+    padding-right: 50px;
+}
+
+#intro_text {
+    text-align: center;
+    color: red;
+}
+
+td {
+    padding-right: 50px;
+}
+
+.deleteButton {
+    /* background-color: DodgerBlue; */
+    border: none;
+    /* color: whitesmoke; */
+    /* padding: 1px 1px; */
+    /* font-size: 16px; */
+    /* cursor: pointer; */
+    /* size: 5%; */
+    width: 50px;
+    height: 50px;
+}
+
+.trash-can {
+    height: 100%;
+}
