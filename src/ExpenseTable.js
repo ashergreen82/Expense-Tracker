@@ -31,8 +31,8 @@ function ExpenseTable({ expenses, setExpenses }) {
                     <tr>
                         <th>Date</th>
                         <th>Name</th>
-                        <th>Amount</th>
                         <th>Description</th>
+                        <th>Amount</th>
                     </tr>
                     {allExpenses}
                 </tbody>
