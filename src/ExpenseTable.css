@@ -76,13 +76,14 @@ button {
 
 .ExpenseTable {
     display: Grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: 200px, 200px, 1000px, 200px;
+    grid-template-rows: 200px, 200px, 1000px, 200px;
     padding-right: 15px;
     margin-top: 40px;
     font-size: 35px;
     background-color: #ffffff;
     color: black;
-    justify-content: center;
+    justify-content: left;
     width: 90%;
     justify-items: center;
     margin: auto;

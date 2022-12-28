@@ -64,14 +64,19 @@ form {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
+    justify-content: center;
     padding: 50px;
     border: #f5f7fa;
     height: auto;
     margin-bottom: 40px;
     width: 90%;
-    justify-items: center;
+    /* justify-items: center; */
     background-color: rgb(245, 232, 232);
     color: black;
+}
+
+#datelable {
+    padding-right: 200px;
 }
 
 button {

@@ -16,10 +16,10 @@ function ExpenseTable({ expenses, setExpenses }) {
     const allExpenses = expenses.map((expense, key) => {
         return (
             <tr key={key} id={expense.id}>
-                <td>{expense.name}</td>
                 <td>{expense.date}</td>
-                <td>{expense.amount}</td>
+                <td>{expense.name}</td>
                 <td>{expense.description}</td>
+                <td>{expense.amount}</td>
                 <td><button className="deleteButton" onClick={deleteItem}><img className="trash-can" src={trashCan}></img></button></td>
             </tr>
         );
@@ -29,8 +29,8 @@ function ExpenseTable({ expenses, setExpenses }) {
             <table>
                 <tbody>
                     <tr>
-                        <th>Name</th>
                         <th>Date</th>
+                        <th>Name</th>
                         <th>Amount</th>
                         <th>Description</th>
                     </tr>

@@ -67,20 +67,11 @@ export default function Expense() {
                         required
                     />
                 </label>
-                <label>Date:
-                    <input
+                <label id="datelable">Date:
+                    <input id="date"
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>Amount:
-                    <input
-                        type="number"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
-                        placeholder="How much?"
                         required
                     />
                 </label>
@@ -90,6 +81,15 @@ export default function Expense() {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         placeholder="What did you spend it on?"
+                        required
+                    />
+                </label>
+                <label>Amount:
+                    <input
+                        type="number"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        placeholder="How much?"
                         required
                     />
                 </label>
