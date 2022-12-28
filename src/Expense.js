@@ -9,10 +9,10 @@ export default function Expense() {
     let [name, setName] = useState("");
     // const [startDate, setStartDate] = useState(new Date());
 
-    let [date, setDate] = useState('');
+    let [date, setDate] = useState("");
     // const dateInputRef = useRef(null);
 
-    let [amount, setAmount] = useState('');
+    let [amount, setAmount] = useState("");
     // const amountInputRef = useRef(null);
 
     // let [type, setType] = useState('Card');
@@ -20,7 +20,7 @@ export default function Expense() {
 
     let [description, setDescription] = useState("");
 
-    let totalAmount = 0;
+    let [totalAmount, setTotalAmount] = useState(0);
 
     let [expenses, setExpenses] = useState([]);
     const handleChange = (e) => {
@@ -30,7 +30,8 @@ export default function Expense() {
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
-        const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random() }
+        setTotalAmount += Number(amount)
+        const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random(), totalAmount: totalAmount }
         console.log(expenseObject)
         // Add the newly created expense object to expenses
         const expensesCopy = []
@@ -39,7 +40,7 @@ export default function Expense() {
             expensesCopy.push(expense);
         }
         expensesCopy.push(expenseObject)
-        totalAmount += Number(amount);
+        // totalAmount += Number(amount);
         console.log("Amount = ", amount);
         console.log("Total= ", totalAmount);
         setExpenses(expensesCopy);
