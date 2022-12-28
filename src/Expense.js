@@ -23,14 +23,14 @@ export default function Expense() {
     let [totalAmount, setTotalAmount] = useState(0);
 
     let [expenses, setExpenses] = useState([]);
-    const handleChange = (e) => {
-        setDate(e.target.value);
-    };
+    // const handleChange = (e) => {
+    //     setDate(e.target.value);
+    // };
 
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
-        setTotalAmount += Number(amount)
+        setTotalAmount = totalAmount + Number(amount)
         const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random(), totalAmount: totalAmount }
         console.log(expenseObject)
         // Add the newly created expense object to expenses
