@@ -8,12 +8,12 @@ h2 {
 
 .App {
     text-align: center;
-    background-color: #a0d468;
+    background-color: white;
 }
 
 body {
-    background-color: #a0d468;
-    color: #f5f7fa;
+    background-color: white;
+    color: black;
 }
 
 input {
@@ -35,11 +35,11 @@ input {
     margin: 15px;
 }
 
-button:hover {
+.AddExpense:hover {
     background-color: darkgreen;
 }
 
-button:active {
+.AddExpense:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -59,18 +59,22 @@ label {
 }
 
 form {
-    /* display: grid; */
-    /* grid-template-columns: repeat(400px); */
-    /* grid-template-rows: repeat(100px); */
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(2, 200px);
+    padding: 50px;
+    border: #f5f7fa;
     /* height: 50px; */
+    margin-bottom: 40px;
+    width: 90%;
+    justify-items: center;
 }
 
 button {
     margin-top: 82;
     margin-bottom: 40px;
-    /* height: 30px; */
-    width: 300px;
+    height: 30px;
+    /* width: 300px; */
     font-size: 25px;
 }
 

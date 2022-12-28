@@ -56,54 +56,45 @@ export default function Expense() {
     return (
         <div>
             <h1>SIMPLE EXPENSE TRACKER</h1>
-            <h2>Add new item:</h2>
             {/* <input type="date" onChange={handleChange} ref={dateInputRef} /> */}
             <form>
-                {/* <label>Type:
-                    <select name="type" id="type" onChange={(e) => setType(e.target.value)}>
-
-                        <option value="Card">Card</option>
-                        <option value="Cash">Cash</option>
-                        <option value="Cryptocoin">Cryptocoin</option>
-                        <option value="Other">Other</option>
-
-                    </select>
-                </label> */}
                 <label>Location:
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Where was it purchased?"
+                        required
                     />
                 </label>
-                <form>
-                    <label>Date:
-                        <input
-                            type="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                        />
-                    </label>
-                    <label>Amount:
-                        <input
-                            type="number"
-                            value={amount}
-                            onChange={(e) => setAmount(e.target.value)}
-                            placeholder="How much?"
-                        />
-                    </label>
-                    <label>Description:
-                        <input
-                            type="text"
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            placeholder="What did you spend it on?"
-                        />
-                    </label>
-                </form>
+                <label>Date:
+                    <input
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>Amount:
+                    <input
+                        type="number"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        placeholder="How much?"
+                        required
+                    />
+                </label>
+                <label>Description:
+                    <input
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="What did you spend it on?"
+                        required
+                    />
+                </label>
             </form>
-            <button className="AddExpense" onClick={addExpense}>Add The New Expense</button>
+            <button className="AddExpense" onClick={addExpense}>Add Expense</button>
             <ExpenseTable expenses={expenses} setExpenses={setExpenses} />
         </div>
     );
