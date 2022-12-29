@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react'
-import { useRef, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './Expense.css';
 import ExpenseTable from "./ExpenseTable";
@@ -34,6 +34,9 @@ export default function Expense() {
         }
         expensesCopy.push(expenseObject)
         setExpenses(expensesCopy);
+        useEffect(() => {
+            localStorage.setItem("expenses", JSON.stringify(expenses));
+        }, [expenses]);
         resetInputFields();
     }
 

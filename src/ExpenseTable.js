@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 
@@ -9,6 +10,12 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
         setExpenses(newExpenses);
         setTotalAmount(Number(totalAmount) - Number(e.target.parentElement.parentElement.previousSibling.innerText));
     };
+    useEffect(() => {
+        const expenses = JSON.parse(localStorage.getItem('expenses'));
+        if (expenses) {
+            setExpenses(expenses);
+        }
+    }, []);
     const allExpenses = expenses.map((expense, key) => {
         return (
             <tr key={key} id={expense.id}>
