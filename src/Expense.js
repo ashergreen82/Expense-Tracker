@@ -7,15 +7,12 @@ import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
     let [name, setName] = useState("");
-    // const [startDate, setStartDate] = useState(new Date());
 
     let [date, setDate] = useState("");
     // const dateInputRef = useRef(null);
 
     let [amount, setAmount] = useState("");
     // const amountInputRef = useRef(null);
-
-    // let [type, setType] = useState('Card');
     // const typeInputRef = useRef(null);
 
     let [description, setDescription] = useState("");
@@ -23,16 +20,12 @@ export default function Expense() {
     let [totalAmount, setTotalAmount] = useState(0);
 
     let [expenses, setExpenses] = useState([]);
-    // const handleChange = (e) => {
-    //     setDate(e.target.value);
-    // };
+
 
     function addExpense() {
-        // console.log(expenses)
         console.log("AddExpense function has executed")
         setTotalAmount(totalAmount + Number(amount))
         const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random(), totalAmount: totalAmount }
-        console.log(expenseObject)
         // Add the newly created expense object to expenses
         const expensesCopy = []
         for (let i = 0; i < expenses.length; i++) {
@@ -40,9 +33,6 @@ export default function Expense() {
             expensesCopy.push(expense);
         }
         expensesCopy.push(expenseObject)
-        // totalAmount += Number(amount);
-        console.log("Amount = ", amount);
-        console.log("Total= ", totalAmount);
         setExpenses(expensesCopy);
         resetInputFields();
     }
@@ -60,7 +50,6 @@ export default function Expense() {
                 <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
                 <h1 id="total_amount">Total: {totalAmount}</h1>
             </div>
-            {/* <input type="date" onChange={handleChange} ref={dateInputRef} /> */}
             <form>
                 <label>Location:
                     <input
