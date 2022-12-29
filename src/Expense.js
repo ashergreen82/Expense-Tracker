@@ -103,7 +103,7 @@ export default function Expense() {
                 expenses={expenses}
                 setExpenses={setExpenses}
                 setTotalAmount={setTotalAmount}
-                setAmount={totalAmount}
+                totalAmount={totalAmount}
             />
         </div>
     );
