@@ -1,7 +1,7 @@
 import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 
-function ExpenseTable({ expenses, setExpenses }) {
+function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
     const deleteItem = (e) => {
         console.log("deleteItem has been executed");
         console.log("All Expenses:", expenses);
@@ -12,6 +12,7 @@ function ExpenseTable({ expenses, setExpenses }) {
         console.log("rowtodelete.id: ", rowToDelete.id);
         const newExpenses = expenses.filter((expense) => parseFloat(expense.id) !== parseFloat(rowToDelete.id));
         setExpenses(newExpenses);
+        setTotalAmount(Number(totalAmount) - Number(e.target.parentElement.parentElement.previousSibling.innerText));
     };
     const allExpenses = expenses.map((expense, key) => {
         return (

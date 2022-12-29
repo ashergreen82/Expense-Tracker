@@ -30,7 +30,7 @@ export default function Expense() {
     function addExpense() {
         // console.log(expenses)
         console.log("AddExpense function has executed")
-        setTotalAmount = totalAmount + Number(amount)
+        setTotalAmount(totalAmount + Number(amount))
         const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random(), totalAmount: totalAmount }
         console.log(expenseObject)
         // Add the newly created expense object to expenses
@@ -56,7 +56,10 @@ export default function Expense() {
 
     return (
         <div>
-            <h1>SIMPLE EXPENSE TRACKER</h1>
+            <div id="header">
+                <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
+                <h1 id="total_amount">Total: {totalAmount}</h1>
+            </div>
             {/* <input type="date" onChange={handleChange} ref={dateInputRef} /> */}
             <form>
                 <label>Location:
@@ -96,7 +99,12 @@ export default function Expense() {
                 </label>
             </form>
             <button className="AddExpense" onClick={addExpense}>Add Expense</button>
-            <ExpenseTable expenses={expenses} setExpenses={setExpenses} />
+            <ExpenseTable
+                expenses={expenses}
+                setExpenses={setExpenses}
+                setTotalAmount={setTotalAmount}
+                setAmount={totalAmount}
+            />
         </div>
     );
 }

@@ -1,10 +1,17 @@
-h1 {
-    font-size: 60px;
-    color: black;
+#header {
+    display: flexbox;
 }
 
-h2 {
+#title {
+    font-size: 60px;
+    color: black;
+    align-items: left;
+}
+
+#total_Amount {
     font-size: 30px;
+    align-items: right;
+    color: black;
 }
 
 .App {
