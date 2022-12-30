@@ -10,12 +10,7 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
         setExpenses(newExpenses);
         setTotalAmount(Number(totalAmount) - Number(e.target.parentElement.parentElement.previousSibling.innerText));
     };
-    useEffect(() => {
-        const expenses = JSON.parse(localStorage.getItem('expenses'));
-        if (expenses) {
-            setExpenses(expenses);
-        }
-    }, []);
+
     const allExpenses = expenses.map((expense, key) => {
         return (
             <tr key={key} id={expense.id}>
@@ -27,6 +22,13 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
             </tr>
         );
     });
+    function tabulateTotal() {
+        let [totalAmount1, setTotalAmount1] = useState(0);
+        for (let i = 0; i <= expenses.length; i++) {
+            setTotalAmount1(totalAmount1 += expenses[i].amount);
+        }
+    }
+
     return (
         <div className="ExpenseTable">
             <table>
@@ -40,6 +42,7 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
                     {allExpenses}
                 </tbody>
             </table>
+            <div>Total: {tabulateTotal}</div>
         </div>
     );
 }

@@ -14,13 +14,25 @@ export default function Expense() {
     let [amount, setAmount] = useState("");
     // const amountInputRef = useRef(null);
     // const typeInputRef = useRef(null);
-
+    const mountCount = useRef(0);
     let [description, setDescription] = useState("");
 
     let [totalAmount, setTotalAmount] = useState(0);
 
     let [expenses, setExpenses] = useState([]);
 
+    useEffect(() => {
+        if (mountCount.current < 3) {
+            const expenses = JSON.parse(localStorage.getItem('expenses'));
+            if (expenses) {
+                setExpenses(expenses);
+            }
+        } else {
+            localStorage.setItem("expenses", JSON.stringify(expenses));
+        }
+        console.log("UseEffect was fired")
+        mountCount.current += 1
+    }, [expenses.length]);
 
     function addExpense() {
         console.log("AddExpense function has executed")
@@ -34,9 +46,6 @@ export default function Expense() {
         }
         expensesCopy.push(expenseObject)
         setExpenses(expensesCopy);
-        useEffect(() => {
-            localStorage.setItem("expenses", JSON.stringify(expenses));
-        }, [expenses]);
         resetInputFields();
     }
 
