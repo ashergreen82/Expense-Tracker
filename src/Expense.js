@@ -63,6 +63,7 @@ export default function Expense() {
             <div id="header">
                 <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
                 <h1 id="total_amount">Total: {totalAmount}</h1>
+                {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
             </div>
             <form>
                 <label>Location:

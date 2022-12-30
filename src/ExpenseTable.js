@@ -27,13 +27,13 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setT
             </tr>
         );
     });
-    function tabulateTotal() {
-        console.log("Tabulate Total has exectued")
-        for (let i = 0; i <= expenses.length; i++) {
-            setTotalAmount1(totalAmount1 += expenses[i].amount);
-        }
-    }
-    setTotalAmount(tabulateTotal);
+    // function tabulateTotal() {
+    //     console.log("Tabulate Total has exectued")
+    //     for (let i = 0; i <= expenses.length; i++) {
+    //         setTotalAmount1(totalAmount1 += expenses[i].amount);
+    //     }
+    // }
+    // setTotalAmount(tabulateTotal);
     // setTotalAmount1(300);
     return (
         <div className="ExpenseTable">
@@ -48,7 +48,7 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setT
                     {allExpenses}
                 </tbody>
             </table>
-            <div>Total: {totalAmount1}</div>
+            {/* <div>Total: {totalAmount1}</div> */}
         </div>
     );
 }
