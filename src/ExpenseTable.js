@@ -2,7 +2,12 @@ import { useRef, useEffect, useState } from 'react';
 import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 
-function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
+
+
+function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setTotalAmount1, totalAmount1 }) {
+    console.log("Expenses: ", expenses)
+    console.log("totalAmount: ", totalAmount)
+    console.log("totalAmount1: ", totalAmount1)
     const deleteItem = (e) => {
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement.parentElement;
@@ -23,12 +28,13 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
         );
     });
     function tabulateTotal() {
-        let [totalAmount1, setTotalAmount1] = useState(0);
+        console.log("Tabulate Total has exectued")
         for (let i = 0; i <= expenses.length; i++) {
             setTotalAmount1(totalAmount1 += expenses[i].amount);
         }
     }
-
+    setTotalAmount(tabulateTotal);
+    // setTotalAmount1(300);
     return (
         <div className="ExpenseTable">
             <table>
@@ -42,7 +48,7 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount }) {
                     {allExpenses}
                 </tbody>
             </table>
-            <div>Total: {tabulateTotal}</div>
+            <div>Total: {totalAmount1}</div>
         </div>
     );
 }
