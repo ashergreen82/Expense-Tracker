@@ -1,13 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
+// import { useRef, useEffect, useState } from 'react';
 import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 
-
-
-function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setTotalAmount1, totalAmount1 }) {
+function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, }) {
     console.log("Expenses: ", expenses)
     console.log("totalAmount: ", totalAmount)
-    console.log("totalAmount1: ", totalAmount1)
     const deleteItem = (e) => {
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement.parentElement;
@@ -23,7 +20,7 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setT
                 <td>{expense.name}</td>
                 <td>{expense.description}</td>
                 <td>{expense.amount}</td>
-                <td><button className="deleteButton" onClick={deleteItem}><img className="trash-can" src={trashCan}></img></button></td>
+                <td><button className="deleteButton" onClick={deleteItem}><img className="trash-can" src={trashCan} alt="X"></img></button></td>
             </tr>
         );
     });
@@ -48,7 +45,6 @@ function ExpenseTable({ expenses, setExpenses, setTotalAmount, totalAmount, setT
                     {allExpenses}
                 </tbody>
             </table>
-            {/* <div>Total: {totalAmount1}</div> */}
         </div>
     );
 }

@@ -21,8 +21,6 @@ export default function Expense() {
 
     let [expenses, setExpenses] = useState([]);
 
-    let [totalAmount1, setTotalAmount1] = useState(0);
-
     useEffect(() => {
         if (mountCount.current < 3) {
             const expenses = JSON.parse(localStorage.getItem('expenses'));
@@ -32,7 +30,7 @@ export default function Expense() {
         } else {
             localStorage.setItem("expenses", JSON.stringify(expenses));
         }
-        console.log("UseEffect was fired")
+        console.log("UseEffect was fired, employee tossed out the window")
         mountCount.current += 1
     }, [expenses.length]);
 
@@ -108,8 +106,6 @@ export default function Expense() {
                 setExpenses={setExpenses}
                 setTotalAmount={setTotalAmount}
                 totalAmount={totalAmount}
-                setTotalAmount1={setTotalAmount1}
-                totalAmount1={totalAmount1}
             />
         </div>
     );
