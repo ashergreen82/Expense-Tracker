@@ -22,7 +22,8 @@ export default function Expense() {
     let [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
-        if (mountCount.current < 3) {
+        const mountCountLimit = process.env.ENV === "PROD" ? 1 : 2;
+        if (mountCount.current < mountCountLimit) {
             const expenses = JSON.parse(localStorage.getItem('expenses'));
             if (expenses) {
                 setExpenses(expenses);
