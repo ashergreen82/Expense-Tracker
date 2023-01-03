@@ -27,18 +27,21 @@ export default function Expense() {
             const expenses = JSON.parse(localStorage.getItem('expenses'));
             if (expenses) {
                 setExpenses(expenses);
+                setAmount(setTotalAmount);
             }
         } else {
             localStorage.setItem("expenses", JSON.stringify(expenses));
+            localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
+
         }
-        console.log("UseEffect was fired, employee tossed out the window")
+        console.log("UseEffect was fired, employee escored out the building.")
         mountCount.current += 1
     }, [expenses.length]);
 
     function addExpense() {
         console.log("AddExpense function has executed")
         setTotalAmount(totalAmount + Number(amount))
-        const expenseObject = { name: name, date: date, amount: amount, description: description, id: Math.random(), totalAmount: totalAmount }
+        const expenseObject = { name: name, date: date, amount: Number(amount), description: description, id: Math.random(), totalAmount: totalAmount }
         // Add the newly created expense object to expenses
         const expensesCopy = []
         for (let i = 0; i < expenses.length; i++) {
@@ -61,7 +64,7 @@ export default function Expense() {
         <div>
             <div id="header">
                 <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
-                <h1 id="total_amount">Total: {totalAmount}</h1>
+                <h1 id="total_amount">Total: ${totalAmount.toFixed(2)}</h1>
                 {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
             </div>
             <form>
