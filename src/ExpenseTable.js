@@ -9,7 +9,6 @@ function ExpenseTable({ expenses, setExpenses }) {
         const rowToDelete = e.target.parentElement.parentElement.parentElement;
         const newExpenses = expenses.filter((expense) => parseFloat(expense.id) !== parseFloat(rowToDelete.id));
         setExpenses(newExpenses);
-        // setTotalAmount(Number(totalAmount) - Number(e.target.parentElement.parentElement.previousSibling.innerText));
     };
 
     const allExpenses = expenses.map((expense, key) => {
@@ -23,14 +22,7 @@ function ExpenseTable({ expenses, setExpenses }) {
             </tr>
         );
     });
-    // function tabulateTotal() {
-    //     console.log("Tabulate Total has exectued")
-    //     for (let i = 0; i <= expenses.length; i++) {
-    //         setTotalAmount1(totalAmount1 += expenses[i].amount);
-    //     }
-    // }
-    // setTotalAmount(tabulateTotal);
-    // setTotalAmount1(300);
+
     return (
         <div className="ExpenseTable">
             <table>

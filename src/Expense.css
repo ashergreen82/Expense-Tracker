@@ -1,3 +1,7 @@
+div {
+    background-color: white;
+}
+
 #header {
     display: flexbox;
 }

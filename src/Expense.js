@@ -75,7 +75,7 @@ export default function Expense() {
     return (
         <div>
             <div id="header">
-                <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
+                <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
                 <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
                 {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
             </div>
