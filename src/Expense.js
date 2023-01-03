@@ -6,32 +6,31 @@ import './Expense.css';
 import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
-    let [name, setName] = useState("");
+    const [name, setName] = useState("");
 
-    let [date, setDate] = useState("");
+    const [date, setDate] = useState("");
     // const dateInputRef = useRef(null);
 
-    let [amount, setAmount] = useState("");
+    const [amount, setAmount] = useState("");
     // const amountInputRef = useRef(null);
     // const typeInputRef = useRef(null);
     const mountCount = useRef(0);
-    let [description, setDescription] = useState("");
+    const [description, setDescription] = useState("");
 
-    let [totalAmount, setTotalAmount] = useState(0);
+    const [totalAmount, setTotalAmount] = useState("0");
 
-    let [expenses, setExpenses] = useState([]);
+    const [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
         const mountCountLimit = process.env.ENV === "PROD" ? 1 : 2;
         if (mountCount.current < mountCountLimit) {
-            const expenses = JSON.parse(localStorage.getItem('expenses'));
-            if (expenses) {
-                setExpenses(expenses);
-                setAmount(setTotalAmount);
+            const allExpenses = JSON.parse(localStorage.getItem('expenses'));
+            if (allExpenses) {
+                setExpenses(allExpenses);
+                setTotalAmount(getExpenseTotals());
             }
         } else {
             localStorage.setItem("expenses", JSON.stringify(expenses));
-            localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
 
         }
         console.log("UseEffect was fired, employee escored out the building.")
@@ -40,8 +39,7 @@ export default function Expense() {
 
     function addExpense() {
         console.log("AddExpense function has executed")
-        setTotalAmount(totalAmount + Number(amount))
-        const expenseObject = { name: name, date: date, amount: Number(amount), description: description, id: Math.random(), totalAmount: totalAmount }
+        const expenseObject = { name: name, date: date, amount: Number(amount), description: description, id: Math.random() }
         // Add the newly created expense object to expenses
         const expensesCopy = []
         for (let i = 0; i < expenses.length; i++) {
@@ -51,6 +49,8 @@ export default function Expense() {
         expensesCopy.push(expenseObject)
         setExpenses(expensesCopy);
         resetInputFields();
+        setTotalAmount("0");
+        setTotalAmount(getExpenseTotals());
     }
 
     function resetInputFields() {
@@ -60,11 +60,23 @@ export default function Expense() {
         setDescription("");
     }
 
+    const getExpenseTotals = () => {
+        let newTotal = 0;
+        expenses.forEach((expenseItem) => {
+            newTotal += parseFloat(expenseItem.amount);
+        });
+        return newTotal;
+    };
+
+    useEffect(() => {
+        setTotalAmount(getExpenseTotals());
+    }, [expenses]);
+
     return (
         <div>
             <div id="header">
                 <h1 id="title">THE UGLIEST SIMPLE EXPENSE TRACKER IN THE WORLD</h1>
-                <h1 id="total_amount">Total: ${totalAmount.toFixed(2)}</h1>
+                <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
                 {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
             </div>
             <form>
@@ -108,9 +120,8 @@ export default function Expense() {
             <ExpenseTable
                 expenses={expenses}
                 setExpenses={setExpenses}
-                setTotalAmount={setTotalAmount}
-                totalAmount={totalAmount}
             />
+            <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
         </div>
     );
 }
