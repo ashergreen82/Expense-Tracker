@@ -40,17 +40,27 @@ export default function Expense() {
     function addExpense() {
         console.log("AddExpense function has executed")
         const expenseObject = { name: name, date: date, amount: Number(amount), description: description, id: Math.random() }
-        // Add the newly created expense object to expenses
-        const expensesCopy = []
-        for (let i = 0; i < expenses.length; i++) {
-            const expense = expenses[i];
-            expensesCopy.push(expense);
+        if (name === "") {
+            alert("Where did you purchase this item?");
+        } else if (date === "") {
+            alert("When did you buy this item or use the service?");
+        } else if (amount === "") {
+            alert("How much did you spend on this item?");
+        } else if (description === "") {
+            alert("Please enter a description");
+        } else {
+            // Add the newly created expense object to expenses
+            const expensesCopy = []
+            for (let i = 0; i < expenses.length; i++) {
+                const expense = expenses[i];
+                expensesCopy.push(expense);
+            }
+            expensesCopy.push(expenseObject)
+            setExpenses(expensesCopy);
+            resetInputFields();
+            setTotalAmount("0");
+            setTotalAmount(getExpenseTotals());
         }
-        expensesCopy.push(expenseObject)
-        setExpenses(expensesCopy);
-        resetInputFields();
-        setTotalAmount("0");
-        setTotalAmount(getExpenseTotals());
     }
 
     function resetInputFields() {
@@ -74,7 +84,7 @@ export default function Expense() {
 
     return (
         <div>
-            <div id="header">
+            <div id="header" className="mb-3">
                 <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
                 <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
                 {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
