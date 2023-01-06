@@ -5,7 +5,7 @@ import Expense from './Expense';
 function App() {
   return (
     <>
-      <div className="App bg-primary text-white">
+      <div className="container">
         <Expense />
       </div>
     </>
