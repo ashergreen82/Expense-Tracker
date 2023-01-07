@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     font-size: 60px;
     color: black;
 }
@@ -70,7 +70,7 @@ button {
     font-size: 25px;
 }
 
-.ExpenseTable {
+/* .ExpenseTable {
     display: Grid;
     grid-template-columns: 200px, 200px, 1000px, 200px;
     grid-template-rows: 200px, 200px, 1000px, 200px;
@@ -83,7 +83,7 @@ button {
     width: 90%;
     justify-items: center;
     margin: auto;
-}
+} */
 
 th {
     padding-right: 50px;
