@@ -70,21 +70,6 @@ button {
     font-size: 25px;
 }
 
-/* .ExpenseTable {
-    display: Grid;
-    grid-template-columns: 200px, 200px, 1000px, 200px;
-    grid-template-rows: 200px, 200px, 1000px, 200px;
-    padding-right: 15px;
-    margin-top: 40px;
-    font-size: 35px;
-    background-color: #ffffff;
-    color: black;
-    justify-content: left;
-    width: 90%;
-    justify-items: center;
-    margin: auto;
-} */
-
 th {
     padding-right: 50px;
 }
@@ -103,15 +88,15 @@ td {
 }
 
 .deleteButton {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border: none;
     /* color: whitesmoke; */
     /* padding: 1px 1px; */
     /* font-size: 16px; */
     cursor: pointer;
     /* size: 5%; */
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .trash-can {
