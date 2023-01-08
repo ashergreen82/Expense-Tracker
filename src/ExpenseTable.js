@@ -17,12 +17,12 @@ function ExpenseTable({ expenses, setExpenses }) {
                 <td>{expense.date}</td>
                 <td>{expense.name}</td>
                 <td>{expense.description}</td>
-                <td>${expense.amount.toFixed(2)}</td>
-                <td>
+                <td>${expense.amount.toFixed(2)}<td>
                     <button src={trashCan} alt="X" className="deleteButton" onClick={deleteItem}>
                         <img className="trash-can" src={trashCan} alt="X"></img>
                     </button>
-                </td>
+                </td></td>
+
             </tr>
         );
     });
