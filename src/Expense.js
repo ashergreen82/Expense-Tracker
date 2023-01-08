@@ -56,7 +56,7 @@ export default function Expense() {
                 expensesCopy.push(expense);
             }
             expensesCopy.push(expenseObject)
-            setExpenses(expensesCopy);
+            // setExpenses(expensesCopy);
             resetInputFields();
             setTotalAmount("0");
             setTotalAmount(getExpenseTotals());
@@ -99,7 +99,7 @@ export default function Expense() {
                 <form className="border mb-4">
                     <div className="row">
                         <div className="col">
-                            <label className="form-label">Location:</label>
+                            <label className="form-label px-0">Location:</label>
                             <div className="input-group">
                                 <input
                                     type="text"
@@ -112,7 +112,7 @@ export default function Expense() {
                             </div>
                         </div>
                         <div className="col">
-                            <label className="form-label">Date:</label>
+                            <label className="form-label px-0">Date:</label>
                             <div className="input-group">
                                 <input
                                     type="date"
@@ -126,7 +126,7 @@ export default function Expense() {
                     </div>
                     <div className="row">
                         <div class="col">
-                            <label className="form-label">Description:</label>
+                            <label className="form-label px-0">Description:</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -137,7 +137,7 @@ export default function Expense() {
                             />
                         </div>
                         <div className="col">
-                            <label className="form-label">Amount:</label>
+                            <label className="form-label px-0">Amount:</label>
                             <input
                                 type="number"
                                 className="form-control"
@@ -148,7 +148,10 @@ export default function Expense() {
                             />
                         </div>
                     </div>
-                    <button class="button-18" className="AddExpense" onClick={addExpense}>Add Expense</button>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button class="btn btn-primary btn-lg" className="AddExpense" onClick={addExpense}>Add Expense</button>
+                    </div>
+
                 </form>
             </div>
             <ExpenseTable
