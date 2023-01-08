@@ -28,7 +28,7 @@ function ExpenseTable({ expenses, setExpenses }) {
     });
 
     return (
-        <table class="table">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th scope="col">Date</th>

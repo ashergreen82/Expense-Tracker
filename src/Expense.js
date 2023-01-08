@@ -148,14 +148,13 @@ export default function Expense() {
                             />
                         </div>
                     </div>
-                    <button className="AddExpense" onClick={addExpense}>Add Expense</button>
+                    <button class="button-18" className="AddExpense" onClick={addExpense}>Add Expense</button>
                 </form>
             </div>
             <ExpenseTable
                 expenses={expenses}
                 setExpenses={setExpenses}
             />
-            {/* <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1> */}
         </div>
     );
 }
