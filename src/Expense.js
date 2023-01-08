@@ -89,14 +89,14 @@ export default function Expense() {
                     <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
                 </div>
                 <div className="col">
-                    <h1 id="total_amount" class="position-sticky top-0 start-50">Total:</h1>
+                    <h1 id="total_amount">Total:</h1>
                 </div>
                 <div className="col">
                     <h1 id="number_amount">${parseFloat(totalAmount).toFixed(2)}</h1>
                 </div>
             </div>
             <div>
-                <form>
+                <form className="border mb-4">
                     <div className="row">
                         <div className="col">
                             <label className="form-label">Location:</label>
@@ -113,7 +113,7 @@ export default function Expense() {
                         </div>
                         <div className="col">
                             <label className="form-label">Date:</label>
-                            <div ClassName="input-group">
+                            <div className="input-group">
                                 <input
                                     type="date"
                                     className="form-control"

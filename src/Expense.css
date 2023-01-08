@@ -97,11 +97,11 @@ body {
     height: 30px;
     /* width: 300px; */
 /* font-size: 25px; */
-
-< !-- HTML !--><button class="button-18" role="button">Button 18</button>
+/* 
+< !-- HTML !--><button class="button-18" role="button">Button 18</button> */
 
 /* CSS */
-.button-18 {
+/* .button-18 {
     align-items: center;
     background-color: #0A66C2;
     border: 0;
@@ -145,4 +145,4 @@ body {
     cursor: not-allowed;
     background: rgba(0, 0, 0, .08);
     color: rgba(0, 0, 0, .3);
-}
+} */
