@@ -2,21 +2,21 @@ div {
     background-color: white;
 }
 
-#header {
-    display: flexbox;
-}
-
 #title {
-    font-size: 60px;
+    /* font-size: 60px; */
     color: black;
-    align-items: left;
+    /* align-items: left; */
 }
 
-#total_amount {
+#number_amount {
+    color: red
+}
+
+/* #total_amount {
     font-size: 50px;
     align-items: right;
     color: black;
-}
+} */
 
 .App {
     text-align: center;

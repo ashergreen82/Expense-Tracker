@@ -32,7 +32,7 @@ function ExpenseTable({ expenses, setExpenses }) {
             <thead>
                 <tr>
                     <th scope="col">Date</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
                     <th scope="col">Description</th>
                     <th scope="col">Amount</th>
                 </tr>

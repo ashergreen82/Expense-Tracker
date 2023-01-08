@@ -84,10 +84,16 @@ export default function Expense() {
 
     return (
         <div>
-            <div id="header" className="mb-3">
-                <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
-                <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
-                {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
+            <div className="row mb-3">
+                <div className="col-9">
+                    <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
+                </div>
+                <div className="col">
+                    <h1 id="total_amount" class="position-sticky top-0 start-50">Total:</h1>
+                </div>
+                <div className="col">
+                    <h1 id="number_amount">${parseFloat(totalAmount).toFixed(2)}</h1>
+                </div>
             </div>
             <div>
                 <form>
