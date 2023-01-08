@@ -13,29 +13,31 @@ function ExpenseTable({ expenses, setExpenses }) {
 
     const allExpenses = expenses.map((expense, key) => {
         return (
-            <tbody>
-                <tr key={key} id={expense.id}>
-                    <td>{expense.date}</td>
-                    <td>{expense.name}</td>
-                    <td>{expense.description}</td>
-                    <td>${expense.amount.toFixed(2)}</td>
-                    <td><button className="deleteButton" onClick={deleteItem}><img className="trash-can" src={trashCan} alt="X"></img></button></td>
-                </tr>
-            </tbody>
+            <tr key={key} id={expense.id}>
+                <td>{expense.date}</td>
+                <td>{expense.name}</td>
+                <td>{expense.description}</td>
+                <td>${expense.amount.toFixed(2)}</td>
+                <td>
+                    <button className="deleteButton" onClick={deleteItem}>
+                        <img className="trash-can" src={trashCan} alt="X"></img>
+                    </button>
+                </td>
+            </tr>
         );
     });
 
     return (
-        <table class="table .table-active">
+        <table class="table">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Amount</th>
                 </tr>
-                {allExpenses}
             </thead>
+            <tbody>{allExpenses}</tbody>
         </table>
     );
 }

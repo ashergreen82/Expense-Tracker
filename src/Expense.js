@@ -83,75 +83,73 @@ export default function Expense() {
     }, [expenses]);
 
     return (
-        <div class="container">
+        <div>
             <div id="header" className="mb-3">
                 <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
                 <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1>
                 {/* <h1 id="total_amount">Total1: {totalAmount1}</h1> */}
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <form>
-                            <label>Location:
+            <div>
+                <form>
+                    <div className="row">
+                        <div className="col">
+                            <label className="form-label">Location:</label>
+                            <div className="input-group">
                                 <input
                                     type="text"
+                                    className="form-control"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     placeholder="Where was it purchased?"
                                     required
                                 />
-                            </label>
-                        </form>
-                    </div>
-                    <div class="col">
-                        <form>
-                            <label id="datelable">Date:
-                                <input id="date"
+                            </div>
+                        </div>
+                        <div className="col">
+                            <label className="form-label">Date:</label>
+                            <div ClassName="input-group">
+                                <input
                                     type="date"
+                                    className="form-control"
                                     value={date}
                                     onChange={(e) => setDate(e.target.value)}
                                     required
                                 />
-                            </label>
-                        </form>
-                    </div>
-                    <form>
-                        <div class="col">
-                            <label>Description:
-                                <input
-                                    type="text"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    placeholder="What did you spend it on?"
-                                    required
-                                />
-                            </label>
+                            </div>
                         </div>
-                    </form>
-                    <div class="col">
-
-                        <label>Amount:
+                    </div>
+                    <div className="row">
+                        <div class="col">
+                            <label className="form-label">Description:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="What did you spend it on?"
+                                required
+                            />
+                        </div>
+                        <div className="col">
+                            <label className="form-label">Amount:</label>
                             <input
                                 type="number"
+                                className="form-control"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder="How much?"
                                 required
                             />
-                        </label>
+                        </div>
                     </div>
-
                     <button className="AddExpense" onClick={addExpense}>Add Expense</button>
-
-                </div>
-
-                <ExpenseTable
-                    expenses={expenses}
-                    setExpenses={setExpenses}
-                />
-                {/* <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1> */}
+                </form>
             </div>
+            <ExpenseTable
+                expenses={expenses}
+                setExpenses={setExpenses}
+            />
+            {/* <h1 id="total_amount">Total: ${parseFloat(totalAmount).toFixed(2)}</h1> */}
         </div>
     );
 }

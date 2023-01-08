@@ -28,24 +28,24 @@ body {
     color: black;
 }
 
-input {
+/* input {
     padding-left: 15px;
     /* margin-right: 30px; */
-    margin-left: 30px;
+/* margin-left: 30px;
     font-size: 30px;
     height: 65px;
     width: 311;
     margin: 15px;
-}
-
-#type {
+} */
+*/
+/* #type {
     margin-left: 30px;
     padding-left: 15px;
     font-size: 30px;
     height: 65px;
     width: 311;
     margin: 15px;
-}
+} */
 
 .AddExpense:hover {
     background-color: darkgreen;
@@ -57,21 +57,21 @@ input {
     transform: translateY(4px);
 }
 
-label {
+/* label {
     justify-items: left;
     text-align: left;
     font-size: 35px;
     padding-right: 20px;
     padding-left: 20px;
     margin-left: 20px;
-}
+} */
 
 .AddExpense {
     background-color: #56c7ff;
     color: white;
 }
 
-form {
+/* form {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
@@ -82,31 +82,31 @@ form {
     margin-bottom: 40px;
     width: 90%;
     /* justify-items: center; */
-    background-color: rgb(245, 232, 232);
-    color: black;
-}
+/* background-color: rgb(245, 232, 232);
+    color: black; */
+
+/* } */
 
 #datelable {
     padding-right: 200px;
 }
 
-button {
+/* button {
     margin-top: 82;
     margin-bottom: 40px;
     height: 30px;
     /* width: 300px; */
-    font-size: 25px;
-}
+/* font-size: 25px; */
 
-th {
-    padding-right: 50px;
-}
-
-#intro_text {
-    text-align: center;
-    color: red;
-}
+/* } */
+/* th { */
+/* padding-right: 50px; */
+/* } */
+/* #intro_text { */
+/* text-align: center;
+    color: red; */
+/* }
 
 td {
     padding-right: 50px;
-}
+} */
