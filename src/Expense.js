@@ -56,19 +56,19 @@ export default function Expense() {
                 expensesCopy.push(expense);
             }
             expensesCopy.push(expenseObject)
-            // setExpenses(expensesCopy);
-            resetInputFields();
+            setExpenses(expensesCopy);
+            // resetInputFields();
             setTotalAmount("0");
             setTotalAmount(getExpenseTotals());
         }
     }
 
-    function resetInputFields() {
-        setName("");
-        setDate("");
-        setAmount("");
-        setDescription("");
-    }
+    // function resetInputFields() {
+    //     setName("");
+    //     setDate("");
+    //     setAmount("");
+    //     setDescription("");
+    // }
 
     const getExpenseTotals = () => {
         let newTotal = 0;
@@ -148,7 +148,7 @@ export default function Expense() {
                             />
                         </div>
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center m-0">
                         <button class="btn btn-primary btn-lg" className="AddExpense" onClick={addExpense}>Add Expense</button>
                     </div>
 
