@@ -84,7 +84,7 @@ export default function Expense() {
 
     return (
         <div>
-            <div className="row mb-3">
+            <div className="row m-3">
                 <div className="col-9">
                     <h1 id="title">SIMPLE EXPENSE TRACKER</h1>
                 </div>
@@ -148,7 +148,7 @@ export default function Expense() {
                             />
                         </div>
                     </div>
-                    <div className="d-grid gap-2 d-md-flex justify-content-md-center m-0">
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-center m-3">
                         <button type="button" className="btn btn-primary" onClick={addExpense}>Add Expense</button>
                     </div>
 

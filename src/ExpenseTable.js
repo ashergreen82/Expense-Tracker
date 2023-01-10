@@ -3,7 +3,6 @@ import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 
 function ExpenseTable({ expenses, setExpenses }) {
-    console.log("Expenses: ", expenses)
     const deleteItem = (e) => {
         e.preventDefault();
         const rowToDelete = e.target.parentElement.parentElement.parentElement;
@@ -26,7 +25,7 @@ function ExpenseTable({ expenses, setExpenses }) {
     ));
 
     return (
-        <table class="table table-bordered table-striped">
+        <table className="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th scope="col">Date</th>
