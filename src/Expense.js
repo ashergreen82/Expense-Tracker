@@ -96,7 +96,7 @@ export default function Expense() {
                 </div>
             </div>
             <div>
-                <form className="border mb-4 p-3">
+                <form className="border mb-4 p-3 bg-light">
                     <div className="row">
                         <div className="col">
                             <label className="form-label px-0">Location:</label>
