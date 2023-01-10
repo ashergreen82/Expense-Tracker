@@ -66,13 +66,13 @@ form {
   /* height: 50px; */
 }
 
-button {
+/* button {
   margin-top: 82;
   margin-bottom: 40px;
   height: 107px;
   width: 300px;
   font-size: 25px;
-}
+} */
 
 .ExpenseTable {
   display: Grid;

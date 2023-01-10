@@ -11,21 +11,19 @@ function ExpenseTable({ expenses, setExpenses }) {
         setExpenses(newExpenses);
     };
 
-    const allExpenses = expenses.map((expense, key) => {
-        return (
-            <tr key={key} id={expense.id}>
-                <td>{expense.date}</td>
-                <td>{expense.name}</td>
-                <td>{expense.description}</td>
-                <td>${expense.amount.toFixed(2)}<td>
-                    <button src={trashCan} alt="X" className="deleteButton" onClick={deleteItem}>
-                        <img className="trash-can" src={trashCan} alt="X"></img>
-                    </button>
-                </td></td>
+    const allExpenses = expenses.map((expense, key) => (
+        <tr key={key} id={expense.id}>
+            <td>{expense.date}</td>
+            <td>{expense.name}</td>
+            <td>{expense.description}</td>
+            <td className="d-flex flex-row align-items-center justify-content-between">${expense.amount.toFixed(2)}
+                <button className="btn btn-sm" onClick={deleteItem}>
+                    <img className="trash-can deleteButton" src={trashCan} alt="X" ></img>
+                </button>
+            </td>
 
-            </tr>
-        );
-    });
+        </tr>
+    ));
 
     return (
         <table class="table table-bordered table-striped">

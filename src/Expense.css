@@ -1,16 +1,16 @@
-div {
+/* div {
     background-color: white;
 }
 
 #title {
     /* font-size: 60px; */
-    color: black;
-    /* align-items: left; */
-}
+/* color: black; */
+/* align-items: left; */
+/* }
 
 #number_amount {
     color: red
-}
+} */
 
 /* #total_amount {
     font-size: 50px;
@@ -18,15 +18,15 @@ div {
     color: black;
 } */
 
-.App {
+/* .App {
     text-align: center;
     background-color: white;
-}
+} */
 
-body {
+/* body {
     background-color: white;
     color: black;
-}
+} */
 
 /* input {
     padding-left: 15px;

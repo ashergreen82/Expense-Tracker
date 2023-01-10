@@ -148,8 +148,8 @@ export default function Expense() {
                             />
                         </div>
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-center m-0">
-                        <button class="btn btn-primary btn-lg" className="AddExpense" onClick={addExpense}>Add Expense</button>
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-center m-0">
+                        <button type="button" className="btn btn-primary" onClick={addExpense}>Add Expense</button>
                     </div>
 
                 </form>
