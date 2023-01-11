@@ -7,18 +7,11 @@ import ExpenseTable from "./ExpenseTable";
 
 export default function Expense() {
     const [name, setName] = useState("");
-
     const [date, setDate] = useState("");
-    // const dateInputRef = useRef(null);
-
     const [amount, setAmount] = useState("");
-    // const amountInputRef = useRef(null);
-    // const typeInputRef = useRef(null);
     const mountCount = useRef(0);
     const [description, setDescription] = useState("");
-
     const [totalAmount, setTotalAmount] = useState("0");
-
     const [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
@@ -57,18 +50,18 @@ export default function Expense() {
             }
             expensesCopy.push(expenseObject)
             setExpenses(expensesCopy);
-            // resetInputFields();
+            resetInputFields();
             setTotalAmount("0");
             setTotalAmount(getExpenseTotals());
         }
     }
 
-    // function resetInputFields() {
-    //     setName("");
-    //     setDate("");
-    //     setAmount("");
-    //     setDescription("");
-    // }
+    function resetInputFields() {
+        setName("");
+        setDate("");
+        setAmount("");
+        setDescription("");
+    }
 
     const getExpenseTotals = () => {
         let newTotal = 0;
