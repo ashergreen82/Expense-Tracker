@@ -26,7 +26,6 @@ export default function Expense() {
             localStorage.setItem("expenses", JSON.stringify(expenses));
 
         }
-        console.log("UseEffect was fired, employee escored out the building.")
         mountCount.current += 1
     }, [expenses.length]);
 
@@ -43,12 +42,12 @@ export default function Expense() {
             alert("Please enter a description");
         } else {
             // Add the newly created expense object to expenses
-            const expensesCopy = []
-            for (let i = 0; i < expenses.length; i++) {
-                const expense = expenses[i];
-                expensesCopy.push(expense);
-            }
-            expensesCopy.push(expenseObject)
+            const expensesCopy = [...expenses, expenseObject]
+            // for (let i = 0; i < expenses.length; i++) {
+            //     const expense = expenses[i];
+            //     expensesCopy.push(expense);
+            // }
+            // expensesCopy.push(expenseObject)
             setExpenses(expensesCopy);
             resetInputFields();
             setTotalAmount("0");
@@ -70,6 +69,24 @@ export default function Expense() {
         });
         return newTotal;
     };
+
+    function handleChange(e) {
+        e.preventDefault();
+        switch (e.target.id) {
+            case "name":
+                setName(e.target.value);
+                break;
+            case "date":
+                setDate(e.target.value);
+                break;
+            case 'amount':
+                setAmount(e.target.value);
+                break;
+            case "description":
+                setDescription(e.target.value);
+                break;
+        }
+    }
 
     useEffect(() => {
         setTotalAmount(getExpenseTotals());
@@ -98,7 +115,7 @@ export default function Expense() {
                                     type="text"
                                     className="form-control"
                                     value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={handleChange}
                                     placeholder="Where was it purchased?"
                                     required
                                 />
@@ -111,7 +128,7 @@ export default function Expense() {
                                     type="date"
                                     className="form-control"
                                     value={date}
-                                    onChange={(e) => setDate(e.target.value)}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -124,7 +141,7 @@ export default function Expense() {
                                 type="text"
                                 className="form-control"
                                 value={description}
-                                onChange={(e) => setDescription(e.target.value)}
+                                onChange={handleChange}
                                 placeholder="What did you spend it on?"
                                 required
                             />
@@ -135,7 +152,7 @@ export default function Expense() {
                                 type="number"
                                 className="form-control"
                                 value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
+                                onChange={handleChange}
                                 placeholder="How much?"
                                 required
                             />
