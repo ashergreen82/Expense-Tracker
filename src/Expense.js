@@ -13,6 +13,12 @@ export default function Expense() {
     const [description, setDescription] = useState("");
     const [totalAmount, setTotalAmount] = useState("0");
     const [expenses, setExpenses] = useState([]);
+    // const [form, setForm ] = useState({
+    //     name: "",
+    //     date: "",
+    //     amount: "",
+    //     description: "",
+    // })
 
     useEffect(() => {
         const mountCountLimit = process.env.ENV === "PROD" ? 1 : 2;
@@ -71,19 +77,26 @@ export default function Expense() {
     };
 
     function handleChange(e) {
+        console.log(e)
         e.preventDefault();
+        console.log("id: ", e.target.id)
         switch (e.target.id) {
             case "name":
                 setName(e.target.value);
+                console.log("setname: ", e.target.value)
+                console.log("name value", name)
                 break;
             case "date":
                 setDate(e.target.value);
+                console.log("setdate: ", e.target.value)
                 break;
             case 'amount':
                 setAmount(e.target.value);
+                console.log("setamount: ", e.target.value)
                 break;
             case "description":
                 setDescription(e.target.value);
+                console.log("setdescription: ", e.target.value)
                 break;
         }
     }
@@ -112,6 +125,7 @@ export default function Expense() {
                             <label className="form-label px-0">Location:</label>
                             <div className="input-group">
                                 <input
+                                    id="name"
                                     type="text"
                                     className="form-control"
                                     value={name}
@@ -125,6 +139,7 @@ export default function Expense() {
                             <label className="form-label px-0">Date:</label>
                             <div className="input-group">
                                 <input
+                                    id="date"
                                     type="date"
                                     className="form-control"
                                     value={date}
@@ -138,6 +153,7 @@ export default function Expense() {
                         <div class="col">
                             <label className="form-label px-0">Description:</label>
                             <input
+                                id="description"
                                 type="text"
                                 className="form-control"
                                 value={description}
@@ -149,6 +165,7 @@ export default function Expense() {
                         <div className="col">
                             <label className="form-label px-0">Amount:</label>
                             <input
+                                id="amount"
                                 type="number"
                                 className="form-control"
                                 value={amount}
