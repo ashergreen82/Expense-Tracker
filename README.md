@@ -2,7 +2,7 @@
 
 *A simple expense tracker written in Javascript, HTML, and CSS*
 
-You can run the program from [here](https://ashergreen82.github.io/Expense-Tracker/).
+You can run the program from [here](https://63c2f2489ccdc732de19a7b5--bucolic-froyo-de7845.netlify.app/).
 <br /><br />
 
 ![screenshot](/src/images/exepense_tracker_screenshot.jpg/)
