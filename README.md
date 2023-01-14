@@ -2,7 +2,7 @@
 
 *A simple expense tracker written in Javascript, HTML, and CSS*
 
-You can run the program from [here](https://ashergreen82.github.io/Calculator-App/).
+You can run the program from [here](https://ashergreen82.github.io/Expense-Tracker/).
 <br /><br />
 
 ![screenshot](/src/images/exepense_tracker_screenshot.jpg/)

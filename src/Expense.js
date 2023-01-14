@@ -49,11 +49,6 @@ export default function Expense() {
         } else {
             // Add the newly created expense object to expenses
             const expensesCopy = [...expenses, expenseObject]
-            // for (let i = 0; i < expenses.length; i++) {
-            //     const expense = expenses[i];
-            //     expensesCopy.push(expense);
-            // }
-            // expensesCopy.push(expenseObject)
             setExpenses(expensesCopy);
             resetInputFields();
             setTotalAmount("0");
