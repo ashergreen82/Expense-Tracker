@@ -1,4 +1,3 @@
-// import { useRef, useEffect, useState } from 'react';
 import './ExpenseTable.css';
 import trashCan from "./images/green trashcan icon.png";
 

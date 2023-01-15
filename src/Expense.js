@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react';
 import React from 'react'
 import { useRef, useEffect, useState } from 'react';
-import ReactDOM from 'react-dom/client';
 import './Expense.css';
 import ExpenseTable from "./ExpenseTable";
 
@@ -36,7 +34,6 @@ export default function Expense() {
     }, [expenses.length]);
 
     function addExpense() {
-        console.log("AddExpense function has executed")
         const expenseObject = { name: name, date: date, amount: Number(amount), description: description, id: Math.random() }
         if (name === "") {
             alert("Where did you purchase this item?");
@@ -47,7 +44,6 @@ export default function Expense() {
         } else if (description === "") {
             alert("Please enter a description");
         } else {
-            // Add the newly created expense object to expenses
             const expensesCopy = [...expenses, expenseObject]
             setExpenses(expensesCopy);
             resetInputFields();
@@ -72,26 +68,19 @@ export default function Expense() {
     };
 
     function handleChange(e) {
-        console.log(e)
         e.preventDefault();
-        console.log("id: ", e.target.id)
         switch (e.target.id) {
             case "name":
                 setName(e.target.value);
-                console.log("setname: ", e.target.value)
-                console.log("name value", name)
                 break;
             case "date":
                 setDate(e.target.value);
-                console.log("setdate: ", e.target.value)
                 break;
             case 'amount':
                 setAmount(e.target.value);
-                console.log("setamount: ", e.target.value)
                 break;
             case "description":
                 setDescription(e.target.value);
-                console.log("setdescription: ", e.target.value)
                 break;
         }
     }
@@ -145,7 +134,7 @@ export default function Expense() {
                         </div>
                     </div>
                     <div className="row">
-                        <div class="col">
+                        <div className="col">
                             <label className="form-label px-0">Description:</label>
                             <input
                                 id="description"
